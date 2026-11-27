@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taza Tokri — Fresh groceries delivered to your door</title>
+  <meta name="description" content="Order fresh vegetables, fruit, dairy and kitchen staples online. Cash on delivery. Order confirmed on WhatsApp.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧺</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top"><span class="brand-mark">🧺</span> <span id="brandName">Taza Tokri</span></a>
+      <div class="search">
+        <input id="search" type="search" placeholder="Search atta, doodh, tamatar…" aria-label="Search products">
+      </div>
+      <button id="cartBtn" class="cart-btn" aria-label="Open cart">
+        🛒 <span class="cart-label">Cart</span> <span id="cartCount" class="badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div>
+          <p class="eyebrow">Same-day delivery · Cash on delivery</p>
+          <h1>Fresh groceries, <span>ghar tak.</span></h1>
+          <p class="lead">Sabzi, phal, doodh, atta and everything else for your kitchen — picked fresh and delivered to your door. Order in two minutes, confirm on WhatsApp.</p>
+          <a class="btn btn-primary" href="#shop">Start shopping</a>
+        </div>
+        <ul class="perks">
+          <li><b>🚚 Free delivery</b><span id="perkFree"></span></li>
+          <li><b>💵 Cash on delivery</b><span>Pay when your order arrives</span></li>
+          <li><b>🥬 Fresh daily</b><span>Sourced every morning from the mandi</span></li>
+          <li><b>💬 WhatsApp support</b><span>Talk to a real person, any time</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="shop" class="wrap shop">
+      <div class="shop-head">
+        <h2>Shop by category</h2>
+        <div id="categories" class="chips" role="tablist"></div>
+      </div>
+      <div id="grid" class="grid"></div>
+      <p id="empty" class="empty" hidden>No products match your search.</p>
+    </section>
+
+    <section class="how">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <ol class="steps">
+          <li><b>1. Fill your basket</b><span>Add what you need from the shop above.</span></li>
+          <li><b>2. Enter your address</b><span>Tell us where and when to deliver.</span></li>
+          <li><b>3. Confirm on WhatsApp</b><span>Your order opens as a WhatsApp message — just press send.</span></li>
+          <li><b>4. Pay at the door</b><span>Check your items, then pay cash to the rider.</span></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <b>🧺 Taza Tokri</b>
+        <p>Online grocery store. Delivery hours 9am – 9pm, seven days a week.</p>
+      </div>
+      <div>
+        <b>Delivery areas</b>
+        <p id="areasText"></p>
+      </div>
+      <div>
+        <b>Contact</b>
+        <p><a id="waLink" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div id="overlay" class="overlay" hidden></div>
+  <aside id="drawer" class="drawer" aria-hidden="true" aria-label="Shopping cart">
+    <div class="drawer-head">
+      <h2>Your basket</h2>
+      <button id="closeCart" class="icon-btn" aria-label="Close cart">✕</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div id="cartFooter" class="cart-footer" hidden>
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd id="subtotal"></dd></div>
+        <div><dt>Delivery</dt><dd id="delivery"></dd></div>
+        <div class="grand"><dt>Total</dt><dd id="total"></dd></div>
+      </dl>
+      <p id="freeHint" class="hint"></p>
+
+      <form id="checkout" class="checkout" novalidate>
+        <h3>Delivery details</h3>
+        <label>Full name <input name="name" required autocomplete="name"></label>
+        <label>Phone number <input name="phone" type="tel" required placeholder="03xx xxxxxxx" autocomplete="tel"></label>
+        <label>Area <select name="area" id="areaSelect" required></select></label>
+        <label>Full address <textarea name="address" rows="2" required placeholder="House, street, block"></textarea></label>
+        <label>Notes (optional) <input name="notes" placeholder="e.g. ring the bell, deliver after 5pm"></label>
+        <p id="formError" class="error" hidden>Please fill in your name, phone, area and address.</p>
+        <button class="btn btn-wa" type="submit">Place order on WhatsApp</button>
+        <p class="hint">Cash on delivery. Nothing is charged online.</p>
+      </form>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

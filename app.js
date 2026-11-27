@@ -4,8 +4,8 @@
 const STORE = {
   name: "Taza Tokri",
   // Your WhatsApp business number: country code + number, no "+" or spaces.
-  // 923000000000 is a placeholder - orders will not reach anyone until you change it.
-  whatsapp: "923000000000",
+  // Customer orders are sent to this number.
+  whatsapp: "923365912959",
   deliveryFee: 150,          // Rs
   freeDeliveryOver: 3000,    // Rs - orders at or above this ship free
   areas: ["Saddar", "Satellite Town", "Chaklala Scheme 3", "Westridge", "Bahria Town", "DHA", "Other (confirm on WhatsApp)"],

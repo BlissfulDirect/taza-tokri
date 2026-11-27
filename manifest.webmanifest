@@ -1,0 +1,13 @@
+{
+  "name": "Taza Tokri - Online Grocery",
+  "short_name": "Taza Tokri",
+  "description": "Order fresh groceries in Rawalpindi. Cash on delivery.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbfcfa",
+  "theme_color": "#1f7a3f",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -8,7 +8,7 @@ const STORE = {
   whatsapp: "923000000000",
   deliveryFee: 150,          // Rs
   freeDeliveryOver: 3000,    // Rs - orders at or above this ship free
-  areas: ["DHA", "Gulberg", "Johar Town", "Model Town", "Bahria Town", "Other (confirm on WhatsApp)"],
+  areas: ["Saddar", "Satellite Town", "Chaklala Scheme 3", "Westridge", "Bahria Town", "DHA", "Other (confirm on WhatsApp)"],
 };
 
 // ---------------------------------------------------------------

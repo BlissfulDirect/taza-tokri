@@ -41,13 +41,15 @@ const PHOTOS = {
   tissue: "1609840112990-4265448268d1",
 };
 
-// Swap each product's emoji for its photo; if a photo fails to load, the emoji comes back.
-for (const p of PRODUCTS) {
-  const photo = PHOTOS[p.id];
-  if (!photo) continue;
-  const emoji = p.art;
+// Picture for a product: its photo if it has one, otherwise its emoji.
+// If a photo fails to load, the emoji comes back.
+function productArt(id, emoji) {
+  const photo = PHOTOS[id];
+  if (!photo) return emoji;
   const url = `https://images.unsplash.com/photo-${photo}?w=400&h=300&fit=crop&q=70&auto=format`;
-  p.art = `<img src="${url}" alt="" loading="lazy" onerror="this.replaceWith('${emoji}')">`;
+  return `<img src="${url}" alt="" loading="lazy" onerror="this.replaceWith('${emoji}')">`;
 }
+
+for (const p of PRODUCTS) p.art = productArt(p.id, p.art);
 renderGrid();
 renderCart();
